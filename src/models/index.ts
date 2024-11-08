@@ -1,4 +1,4 @@
-import User from './models/User.js';
-import Thought from './models/Thought.js';
+import User from './User.js';
+import Thought from './Thought.js';
 
 export { User, Thought };
