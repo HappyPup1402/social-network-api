@@ -1,5 +1,4 @@
-// import User from './User.js';
-// import Tag from './Tag.js';
-// import Application from './Application.js';
+import User from './models/User.js';
+import Thought from './models/Thought.js';
 
-// export { User, Application, Tag };
+export { User, Thought };
