@@ -17,6 +17,7 @@ interface IThought extends Document {
     reactionCount: number; // for the virtual property
 }
 
+
 // Reaction Schema (Subdocument)
 const reactionSchema = new Schema<IReaction>(
     {
@@ -36,7 +37,7 @@ const reactionSchema = new Schema<IReaction>(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: (timestamp: Date) => timestamp.toLocaleDateString(), // Format the date
+            get: (value: any) => value?.toISOString().split('T')[0], // Format to 'YYYY-MM-DD'
         },
     },
     {
@@ -59,7 +60,7 @@ const thoughtSchema = new Schema<IThought>(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: (timestamp: Date) => timestamp.toLocaleDateString(), // Format the date
+            get: (value: any) => value?.toISOString().split('T')[0], // Format to 'YYYY-MM-DD'
         },
         username: {
             type: String,
