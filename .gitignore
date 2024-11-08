@@ -1,0 +1,11 @@
+# Ignore the build output directory
+dist/
+
+# Ignore dependencies
+node_modules/
+
+# Ignore lock files
+package-lock.json
+
+# Optional: Ignore environment configuration files if used
+.env
