@@ -1,7 +1,7 @@
 // utils/seed.ts
 import connection from '../config/connection.js';
 import { User, Thought } from '../models/index.js';
-import { users, thoughts } from './data.js';
+import { users, thoughts, updateUserThoughtsAndFriends } from './data.js';
 
 connection.on('error', (err) => console.error(err));
 
@@ -25,6 +25,9 @@ connection.once('open', async () => {
     // Insert seed data
     await User.insertMany(users);
     await Thought.insertMany(thoughts);
+
+    // Update user thoughts and friends references
+    await updateUserThoughtsAndFriends();
 
     console.table(users);
     console.table(thoughts);
